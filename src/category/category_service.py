@@ -7,9 +7,6 @@ categoryRepository = CategoryRepository()
 
 class CategoryService:
     def addCategory(self, requestBody):
-        if requestBody is None:
-            return jsonify({'message': 'Bad request'}), 400
-
         categoryName = requestBody.get('name')
         if categoryName is None:
             return jsonify({'message': 'Bad request'}), 400
@@ -21,8 +18,6 @@ class CategoryService:
         return jsonify(categoryRepository.getAllCategories()), 200
 
     def deleteCategory(self, requestBody):
-        if requestBody is None:
-            return jsonify({'message': 'Bad request'}), 400
         categoryId = requestBody.get('id')
         if categoryId is None:
             return jsonify({'message': 'Bad request'}), 400
