@@ -16,6 +16,6 @@ def getCategories():
     return categoryService.getAllCategories()
 
 
-@app.route('/category', methods=['DELETE'])
-def deleteCategory():
-    return categoryService.deleteCategory(request.get_json())
+@app.route('/category/<int:id>', methods=['DELETE'])
+def deleteCategory(id):
+    return categoryService.deleteCategory(id)

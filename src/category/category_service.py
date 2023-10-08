@@ -17,12 +17,11 @@ class CategoryService:
     def getAllCategories(self):
         return jsonify(categoryRepository.getAllCategories()), 200
 
-    def deleteCategory(self, requestBody):
-        categoryId = requestBody.get('id')
-        if categoryId is None:
+    def deleteCategory(self, id):
+        if id is None:
             return jsonify({'message': 'Bad request'}), 400
 
-        removeResult = categoryRepository.removeCategoryById(categoryId)
+        removeResult = categoryRepository.removeCategoryById(id)
         if not removeResult:
             return jsonify({'message': 'Category is not found !'}), 404
         return {'result': removeResult}, 200
