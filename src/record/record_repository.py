@@ -6,11 +6,14 @@ class RecordRepository:
 
     def addRecord(self, idUser, idCategory, expenditureAmount):
         if not self._records:
-            self._records.append(Record(1, idUser, idCategory, expenditureAmount).getDict())
+            record = Record(1, idUser, idCategory, expenditureAmount).getDict()
+            self._records.append(record)
+            return record
         else:
             lastElemId = self._records[-1].get('id')
-            self._records.append(Record(lastElemId + 1, idUser, idCategory, expenditureAmount).getDict())
-        return True
+            record = Record(lastElemId + 1, idUser, idCategory, expenditureAmount).getDict()
+            self._records.append(record)
+            return record
 
     def removeRecordById(self, id):
         targetRecordIndex = self._getIndexByRecordId(id)

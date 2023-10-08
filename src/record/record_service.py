@@ -24,7 +24,7 @@ class RecordService:
             return jsonify({'message': 'Expenditure amount can not be less than 1 !'}), 400
 
         addResult = recordRepository.addRecord(idUser, idCategory, expenditureAmount)
-        return jsonify({'result': addResult}), 201
+        return jsonify(addResult), 201
 
     def getRecordById(self, id):
         record = recordRepository.getRecordById(id)

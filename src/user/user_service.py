@@ -15,7 +15,7 @@ class UserService:
         if name is None:
             return jsonify({'message': 'Bad request !'}), 400
         addResult = userRepository.addUser(name)
-        return jsonify({'result': addResult}), 200
+        return jsonify(addResult), 200
 
     def getUsers(self):
         return jsonify(userRepository.getAllUsers()), 200

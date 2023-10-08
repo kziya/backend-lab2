@@ -6,11 +6,13 @@ class UserRepository:
 
     def addUser(self, name):
         if not self._users:
-            self._users.append(User(1, name).getDict())
+            user = User(1, name).getDict()
+            self._users.append(user)
         else:
             lastElemId = self._users[-1].get('id')
-            self._users.append(User(lastElemId + 1, name).getDict())
-        return True
+            user = User(lastElemId + 1, name).getDict()
+            self._users.append(user)
+            return user
 
     def removeUserById(self, id):
         targetUserIndex = self._getIndexById(id)

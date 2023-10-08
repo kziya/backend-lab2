@@ -10,7 +10,7 @@ class CategoryService:
             return jsonify({'message': 'Bad request'}), 400
 
         addResult = categoryRepository.addCategory(categoryName)
-        return jsonify({'result': addResult}), 201
+        return jsonify(addResult), 201
 
     def getAllCategories(self):
         return jsonify(categoryRepository.getAllCategories()), 200

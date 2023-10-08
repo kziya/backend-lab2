@@ -6,11 +6,14 @@ class CategoryRepository:
 
     def addCategory(self, name):
         if not self._categories:
-            self._categories.append(Category(1, name).getDict())
+            category = Category(1, name).getDict()
+            self._categories.append(category)
+            return category
         else:
             lastElemId = self._categories[-1].get('id')
-            self._categories.append(Category(lastElemId + 1, name).getDict())
-        return True
+            category = Category(lastElemId + 1, name).getDict()
+            self._categories.append(category)
+            return category
 
     def removeCategoryById(self, id):
         targetCategoryIndex = self._getIndexByCategoryId(id)
