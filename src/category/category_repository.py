@@ -38,3 +38,6 @@ class CategoryRepository:
                 break
         print(id, targetCategoryIndex)
         return targetCategoryIndex
+
+
+categoryRepository = CategoryRepository()

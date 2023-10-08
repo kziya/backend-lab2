@@ -1,8 +1,6 @@
 from flask import jsonify
 
-from src.category.category_repository import CategoryRepository
-
-categoryRepository = CategoryRepository()
+from src.category.category_repository import categoryRepository
 
 
 class CategoryService:

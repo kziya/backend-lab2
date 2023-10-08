@@ -31,10 +31,12 @@ class UserRepository:
             return None
 
     def _getIndexById(self, id):
-        targetCategoryIndex = None
-        for index, category in enumerate(self._users):
-            if category.get('id') == id:
-                targetCategoryIndex = index
+        targetUserIndex = None
+        for index, user in enumerate(self._users):
+            if user.get('id') == id:
+                targetUserIndex = index
                 break
-        print(id, targetCategoryIndex)
-        return targetCategoryIndex
+        return targetUserIndex
+
+
+userRepository = UserRepository()

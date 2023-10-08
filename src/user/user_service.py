@@ -1,8 +1,6 @@
 from flask import jsonify
 
-from src.user.user_repository import UserRepository
-
-userRepository = UserRepository()
+from src.user.user_repository import userRepository
 
 
 class UserService:
